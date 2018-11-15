@@ -26,9 +26,8 @@
     ($capture (fac-sub)
         ($$defun fac (n) (fac-sub n 1)) ))
 
+
 ;; exports
-(#
-    (tarai (<- tarai))
-    (fib (<- fib))
-    (fac (<- fac))
-)
+(#  (tarai (<- tarai))
+    (fib   (<- fib))
+    (fac   (<- fac)) )

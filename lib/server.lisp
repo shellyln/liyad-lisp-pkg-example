@@ -1,7 +1,6 @@
 
 ($let http ($node-require "http"))
-($let net ($node-require "net"))
-($let url ($node-require "url"))
+($let url  ($node-require "url" ))
 
 
 ($local ((handlers nil)) ($capture (handlers)
@@ -19,7 +18,7 @@
             ($let x nil)
             ($let h false)
             ($while ($and ($not h) (< i ($length handlers)))
-                ($set x ($get handlers ($eval i)))
+                ($set x ($[ i ] handlers))
                 ($set h ($if ($and (=== ($get x 0) ::req:method) (=== ($get x 1) ::u:path))
                     ($last (($get x 2) req res) true)
                     false ))
@@ -31,17 +30,9 @@
         (::server@listen port) ) ))
 
 
-(#get "/" (-> (req res)
-    ($let u (::url:parse ::req:url))
-    (::res@writeHead 200 (# (Content-Type "text/html")))
-    (::res@end ($concat "hit / ," ::req:method "," ::u:path)) ) )
-
-
 ;; exports
-(#
-    (serve (<- serve))
-    (#get (<- #get))
-    (#post (<- #post))
-    (#put (<- #put))
-    (#delete (<- #delete))
-)
+(#  (serve   (<- serve))
+    (#get    (<- #get))
+    (#post   (<- #post))
+    (#put    (<- #put))
+    (#delete (<- #delete)) )
