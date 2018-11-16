@@ -1,7 +1,8 @@
 {
   "name": "liyad-lisp-pkg-example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NPM package example for Liyad Lisp interpreter.",
+  "keywords": ["Lisp", "Liyad", "DSL", "interpreter", "package", "example"],
   "main": "index.lisp",
   "scripts": {
     "test": "echo \"no test specified\""

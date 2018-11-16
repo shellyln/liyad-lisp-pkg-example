@@ -12,7 +12,11 @@ $ cd myapp
 $ npm install liyad-lisp-pkg-example
 ```
 
-## Code
+## Write the code
+
+```bash
+$ vi app.lisp
+```
 
 app.lisp
 ```lisp
@@ -37,5 +41,10 @@ app.lisp
 ## Run
 
 ```bash
-liyad app.lisp
+$ liyad app.lisp
+
+12
+55
+3628800
+start server
 ```
