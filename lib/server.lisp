@@ -4,7 +4,6 @@
 
 
 ($local ((handlers nil)) ($capture (handlers)
-    ($defun $push (ar item) ($set (ar ($length ar)) item))
 
     ($defun #get (path handler) ($push handlers ($list "GET" path handler)))
     ($defun #post (path handler) ($push handlers ($list "POST" path handler)))
@@ -19,7 +18,7 @@
             ($let h false)
             ($while ($and ($not h) (< i ($length handlers)))
                 ($set x ($[ i ] handlers))
-                ($set h ($if ($and (=== ($get x 0) ::req:method) (=== ($get x 1) ::u:path))
+                ($set h ($if ($and (=== ($get x 0) ::req:method) ($match ($get x 1) ::u:path))
                     ($last (($get x 2) req res) true)
                     false ))
                 ($set i (+ i 1)))
