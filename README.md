@@ -1,6 +1,6 @@
 # liyad-lisp-pkg-example
 
-NPM package example for [Liyad](https://www.npmjs.com/package/liyad) Lisp interpreter.
+NPM package example for [Liyad](https://www.npmjs.com/package/liyad) Lisp interpreter [CLI](https://www.npmjs.com/package/liyad-cli).
 
 ## Install
 
