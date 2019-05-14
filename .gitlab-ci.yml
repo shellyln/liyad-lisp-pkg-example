@@ -1,4 +1,4 @@
-image: node:11
+image: node:12
 
 before_script:
   - npm install -g liyad-cli
@@ -7,7 +7,12 @@ before_script:
 #  paths:
 #    - node_modules/
 
+test:node:12:
+  script:
+    - liyad index.lisp
+
 test:node:11:
+  image: node:11
   script:
     - liyad index.lisp
 
